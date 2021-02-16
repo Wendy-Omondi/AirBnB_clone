@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """contains entry point of the command interprator"""
 
-import cmd, sys
+import cmd
+
 
 class HBNBCommand(cmd.Cmd):
     """class definition"""
@@ -14,6 +15,7 @@ class HBNBCommand(cmd.Cmd):
         An end-of-file on input is passed back as the string 'EOF'
         """
         return True
+
     def do_quit(self, arg):
         """
         Quit command to exit the program
@@ -23,10 +25,10 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
 
-def parse(arg): 
+
+def parse(arg):
     'Convert a series of zero or more numbers to an argument tuple'
     return tuple(map(int, arg.split()))
 
-if __name__ == '__main__':                                         
+if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
