@@ -2,22 +2,22 @@
 from uuid import uuid4
 from datetime import datetime
 
-"""defines all common attributes/methods of other classes"""
 
 class BaseModel:
+    """defines all common attributes/methods of other classes"""
 
-    def __init__(self,*args,**kwargs):
+    def __init__(self, *args, **kwargs):
         """
         method to instantate an instance of BaseModel
         """
         def args(self):
             pass
 
-        for key, value in kwargs.items():                                   
-                if key == "created_at" or key == "updated_at":              
+        for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
-                if key != "__class__":                                      
-                    setattr(self, key, value) 
+                if key != "__class__":
+                    setattr(self, key, value)
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
@@ -38,7 +38,9 @@ class BaseModel:
            of __dict__ of the instance
         """
         return{
-               'id' : self.id,
-               'created_at' : str(self.created_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
-               'updated_at' : str(self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
-              }
+                'id': self.id,
+                'created_at':
+                str(self.created_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
+                'updated_at':
+                str(self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
+                }
