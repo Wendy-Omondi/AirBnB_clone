@@ -2,9 +2,11 @@
 import json
 from models.base_model import BaseModel
 
-class FileStorage:
-    """serializes instances to a JSON file and deserializes JSON file to instances"""
 
+class FileStorage:
+    """serializes instances to a JSON file and
+       deserializes JSON file to instances
+    """
 
     def __init__(self):
         """Initializes"""
@@ -13,7 +15,7 @@ class FileStorage:
 
     def all(self):
         """returns the dictionary __objects"""
-        
+
     return __objects.__dict__
 
     def new(self, obj):
@@ -24,6 +26,7 @@ class FileStorage:
         """serializes __objects to the JSON file (path: __file_path)"""
         obj = json.dumps(self, default=self.__objects)
         return obj
+
     def reload(self):
         """
         deserializes the JSON file to __objects
