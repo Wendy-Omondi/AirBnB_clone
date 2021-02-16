@@ -7,7 +7,9 @@ from models.base_model import BaseModel
 class User:
     """user details"""
 
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    def __init__(def):
+        """user dtails"""
+        email = ""
+        password = ""
+        first_name = ""
+        last_name = ""
