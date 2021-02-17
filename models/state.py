@@ -5,9 +5,5 @@
 from models.base_model import BaseModel
 
 class State(BaseModel):
-    """states search"""
-
-    def __init__(self):
-        """initializes"""
-        name = ""
-    self.name = name
+    """states details"""
+    name = ""
