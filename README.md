@@ -31,10 +31,10 @@ vagrant@vagrant-ubuntu-trusty-64:~/AirBnB$
 
 ```
 ## **Console Commands**                                                                                                            
-#### **create**                                                                                                             
+###### **create:**                                                                                                             
 Creates a new instance of `BaseModel`, saves it (to a JSON file) and prints the `id.`                                      
 ``` Ex: $ create BaseModel```                                                                                              
-#### **show:**                                                                                                               
+###### **show:**                                                                                                               
 Prints the string representation of an instance based on the class name and `id.`                                          
 ```Ex: $ show BaseModel 1234-1234-1234.```                                                                                 
 ###### **destroy:**                                                                                                        
@@ -43,7 +43,7 @@ Deletes an instance based on the class name and `id` (saves the change into the 
 ###### **all:**                                                                                                          
 Prints all string representation of all instances based or not on the class name.                                          
 ```Ex: $ all BaseModel or $ all.```                                                                                        
-###### update:**                                                                                                        
+###### **update:**                                                                                                        
 Updates an instance based on the class name and `id` by adding or updating attribute (saves the change into the JSON file).
 ```Ex: $ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com".```                                             
 
