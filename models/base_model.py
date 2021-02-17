@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""defines a BseModel class"""
+import models
 from uuid import uuid4
 from datetime import datetime
-from models.__init__ import storage
+# from models.__init__ import storage
+# from models.engine.file_storage import FileStorage
+
 
 class BaseModel:
     """defines all common attributes/methods of other classes"""
@@ -32,10 +36,6 @@ class BaseModel:
         self.updated_at = self.created_at
         models.storage.save()
 
-    def __str__(self):
-        class_name = self.__class__.__name__
-        return (("[{}] ({}) {}".format(class_name, self.id, self.__dict__)))
-
     def to_dict(self):
         """returns a dictionary containing all keys/values
            of __dict__ of the instance
@@ -47,3 +47,7 @@ class BaseModel:
                 'updated_at':
                 str(self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
                 }
+    def __str__(self):                                                      
+        """prints the class name, id and dictionary"""                      
+        class_name = self.__class__.__name__                                
+        return (("[{}] ({}) {}".format(class_name, self.id, self.__dict__)))
