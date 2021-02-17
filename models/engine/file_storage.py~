@@ -1,8 +1,0 @@
-#!/usr/bin/python3
-class FileStorage:
-    """serializes instances to a JSON file and deserializes JSON file to instances"""
-
-
-    def __init__(self):
-        """Initializes"""
-        
