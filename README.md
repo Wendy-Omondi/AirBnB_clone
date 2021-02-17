@@ -11,12 +11,10 @@ To use the console in interactuve mode, run the executable file console.py as sh
 
 #### **Example**
 
-'''
-
-vagrant@vagrant-ubuntu-trusty-64:~/AirBnB$ ./console.py
-(hbnb) help
-
-Documented commands (type help <topic>):
+>vagrant@vagrant-ubuntu-trusty-64:~/AirBnB$ ./console.py
+>(hbnb) help
+>
+>Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
