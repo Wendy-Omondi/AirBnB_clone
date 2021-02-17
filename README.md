@@ -11,7 +11,7 @@ To use the console in interactuve mode, run the executable file console.py as sh
 
 #### **Example**
 
-'''
+>
 vagrant@vagrant-ubuntu-trusty-64:~/AirBnB$ ./console.py
 (hbnb) help
 
@@ -27,7 +27,6 @@ Quit command to exit the program
 (hbnb) 
 (hbnb) quit 
 vagrant@vagrant-ubuntu-trusty-64:~/AirBnB$
-'''
 
 ## **Author**
 
