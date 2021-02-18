@@ -47,9 +47,9 @@ class HBNBCommand(cmd.Cmd):
         saves it (to the JSON file) and prints the id.
         """
         if len(arg) == 0:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif arg[0] not in classes:
-            print ("** class doesn't exist **")
+            print("** class doesn't exist **")
         else:
             print((arg[0])().id)
             storage.save()
@@ -57,7 +57,7 @@ class HBNBCommand(cmd.Cmd):
     def show(self, arg):
         """Prints the string representation of an instance
         based on the class name and id.
-        
+
         """
         o_dic = storage.all
         if len(arg) == 0:
@@ -70,14 +70,14 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             print(o_dic["{}.{}".format(argl[0], argl[1])])
-            
+
     def destroy(self, arg):
         """Deletes an instance base on the case name and id"""
         o_dic = storage.all
         if len(arg) == 0:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif arg[0] not in HBNBCommand.__classes:
-            print ("** class doesn't exist **")
+            print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
         elif "{}.{}".format(argl[0], argl[1]) not in o_dic.keys():
@@ -117,6 +117,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 2:
             print("** attribute name missing **")
         storage.save()
+
 
 def parse(arg):
     'Convert a series of zero or more numbers to an argument tuple'
