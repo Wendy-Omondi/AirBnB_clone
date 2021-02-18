@@ -47,7 +47,8 @@ class BaseModel:
                 'updated_at':
                 str(self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
                 }
-    def __str__(self):                                                      
-        """prints the class name, id and dictionary"""                      
-        class_name = self.__class__.__name__                                
+
+    def __str__(self):
+        """prints the class name, id and dictionary"""
+        class_name = self.__class__.__name__
         return (("[{}] ({}) {}".format(class_name, self.id, self.__dict__)))
