@@ -30,6 +30,7 @@ class HBNBCommand(cmd.Cmd):
         """
         An end-of-file on input is passed back as the string 'EOF'
         """
+        print("")
         return True
 
     def do_quit(self, arg):
