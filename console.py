@@ -36,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Quit command to exit the program
         """
-        quit(*parse(arg))
+        return True
 
     def emptyline(self):
         pass
@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg[0] not in classes:
             print("** class doesn't exist **")
         else:
-            print((arg[0])().id)
+            print(eval(arg[0])().id)
             storage.save()
 
     def show(self, arg):
@@ -116,6 +116,12 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         if len(arg) == 2:
             print("** attribute name missing **")
+        if len(argl) == 3:
+            try:
+                type(eval(argl[2])) != dict
+            except NameError:
+                print("** value missing **")
+                return False
         storage.save()
 
 
