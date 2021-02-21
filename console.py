@@ -26,17 +26,13 @@ class HBNBCommand(cmd.Cmd):
         "Review"
     }
 
-    def do_quit(self, arg):                   
-    """Quit command to exit the program"""
-    return True                           
-
     def do_EOF(self, line):
         """An end-of-file on input is passed back as the string EOF"""
         return True
 
-#    def do_quit(self, arg):
-#        """Quit command to exit the program"""
-#        return True
+    def do_quit(self, arg):
+        """Quit command to exit the program"""
+        return True
 
     def emptyline(self):
         pass
