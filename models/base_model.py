@@ -28,6 +28,9 @@ class BaseModel:
                         setattr(self, key, value)
         else:
             models.storage.new(self)
+    def __str__(self):                                                               
+    """prints the class name, id and dictionary"""                               
+    return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """
@@ -50,6 +53,7 @@ class BaseModel:
                 str(self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
                 }
 
-    def __str__(self):
-        """prints the class name, id and dictionary"""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+#    def __str__(self):
+#        """prints the class name, id and dictionary"""
+#        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+#
