@@ -72,43 +72,13 @@ class FileStorage:
         if the file does not exist.
 
         """
-
         try:
-
-            with open(self.__file_path, 'r', encoding="utf8") as f:
-
-                # The load method deserializes a json string into a python dict
-
-                obj_dict = json.load(f)
-
-            for obj_item in obj_dict.values():
-
-                # Extract the class from which to instantiate an object.
-
-                # Remember we loaded the values not the keys.
-
-                class_name = obj_item["__class__"]
-
-                # Since we are creating obj instances the attribute __class__
-
-                # should not be supplied as part of the arguments to the init
-
-                # function of the class(identified by class_name) all the other
-
-                # arguments are valid.
-
-                del obj_item["__class__"]
-
-                # Use the previously defined new function to create a new obj.
-
-                # The double asterics expands the dictionary to allow every key
-
-                # value pair from obj_item dict to be passed to the __init__()
-
-                # method of the class identified by class_name
-
-                self.new(eval(class_name)(**obj_item))
-
+            with open(FileStorage.__file_path) as f:
+                objdict = json.load(f)
+                for o in objdict.values():
+                    cls_name = o["__class__"]
+                    del o["__class__"]
+                    self.new(eval(cls_name)(**o))
         except:
 
             pass
