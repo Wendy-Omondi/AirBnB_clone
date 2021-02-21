@@ -10,7 +10,7 @@ from models.place import Place
 from models.review import Review
 from models.state import State
 from models.user import User
-
+from shlex import split
 
 class HBNBCommand(cmd.Cmd):
     """class definition"""
@@ -30,7 +30,6 @@ class HBNBCommand(cmd.Cmd):
         """
         An end-of-file on input is passed back as the string 'EOF'
         """
-        print("")
         return True
 
     def do_quit(self, arg):
@@ -42,11 +41,12 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
 
-    def create(self, arg):
+    def create(self, args):
         """
         Creates a new instance of BaseModel,
         saves it (to the JSON file) and prints the id.
         """
+        # arg = parse(args)
         if len(arg) == 0:
             print("** class name missing **")
         elif arg[0] not in classes:
@@ -55,11 +55,12 @@ class HBNBCommand(cmd.Cmd):
             print(eval(arg[0])().id)
             storage.save()
 
-    def show(self, arg):
+    def show(self, args):
         """Prints the string representation of an instance
         based on the class name and id.
 
         """
+        # arg = parse(args)
         o_dic = storage.all
         if len(arg) == 0:
             print("** class name missing **")
