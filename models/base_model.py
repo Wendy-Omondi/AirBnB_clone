@@ -42,15 +42,13 @@ class BaseModel:
         """returns a dictionary containing all keys/values
            of __dict__ of the instance
         """
-        o_dic = self._dict_
-        dic_str = {}
-        for key, value in l_dict.items():
-            if isinstance(value, datetime):
-                dic_str[key] = value.strftime("%Y-%m-%dT%H:%M:%S.%f")
-            else:
-                dic_str[key] = value
-        dic_str["_class"] = self.class.name_
-        return dic_str
+        return{
+                'id': self.id,
+                'created_at':
+                str(self.created_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
+                'updated_at':
+                str(self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')),
+                }
 
     def __str__(self):
         """prints the class name, id and dictionary"""
