@@ -16,16 +16,16 @@ class BaseModel:
         """
         def args(self):
             pass
-        self.id = str(uuid4())          
+        self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
         if len(kwargs) > 0:
             for key, value in kwargs.items():
-                    if key == "created_at" or key == "updated_at":
-                        value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
-                    if key != "__class__":
-                        setattr(self, key, value)
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                if key != "__class__":
+                    setattr(self, key, value)
         else:
             models.storage.new(self)
 
@@ -52,5 +52,5 @@ class BaseModel:
 
     def __str__(self):
         """prints the class name, id and dictionary"""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
-
+        return "[{}] ({}) {}".format
+        (self.__class__.__name__, self.id, self.__dict__)
