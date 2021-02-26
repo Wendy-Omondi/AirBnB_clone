@@ -11,6 +11,8 @@ from models.review import Review
 from models.state import State
 from models.user import User
 from shlex import split
+import json
+
 
 class HBNBCommand(cmd.Cmd):
     """class definition"""
@@ -35,6 +37,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """override default emptyline"""
         pass
 
     def create(self, args):
@@ -42,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
         Creates a new instance of BaseModel,
         saves it (to the JSON file) and prints the id.
         """
-        # arg = parse(args)
+        arg = parse(args)
         if len(arg) == 0:
             print("** class name missing **")
         elif arg[0] not in classes:
@@ -56,7 +59,6 @@ class HBNBCommand(cmd.Cmd):
         based on the class name and id.
 
         """
-        # arg = parse(args)
         o_dic = storage.all
         if len(arg) == 0:
             print("** class name missing **")
