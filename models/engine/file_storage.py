@@ -4,10 +4,15 @@
 
 import json
 from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 
 
 class FileStorage:
-
     """Serializes an instance to JSON and
 
     deserializes back to instance object
@@ -41,25 +46,20 @@ class FileStorage:
 
         """" Serializes __objects to the JSON File(path:__file_path)"""
 
-        j_objects = {}
-
-        # For the python data to be serialized the data stored inside the objec
-
-        # variable as objects must be converted to a dictionary so that python
-
-        # for json to understand using to_dict method of the basemodel class
-
+        j_obj = {}
+        # convert to a dictionary for json to understand using
+        # to_dict method of the basemodel class
         # The result of this will be a key with a unique dict as the value.
 
         for key in self.__objects:
 
-            j_objects[key] = self.__objects[key].to_dict()
+            j_obj[key] = self.__objects[key].to_dict()
 
         # Convert the dictionary into json and save in __filepath.
 
         with open(self.__file_path, 'w') as f:
 
-            json.dump(j_objects, f)
+            json.dump(j_obj, f)
 
     def reload(self):
 
