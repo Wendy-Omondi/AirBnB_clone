@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         """override default emptyline"""
         pass
 
-    def create(self, args):
+    def do_create(self, args):
         """
         Creates a new instance of BaseModel,
         saves it (to the JSON file) and prints the id.
@@ -54,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
             print(eval(arg[0])().id)
             storage.save()
 
-    def show(self, args):
+    def do_show(self, arg):
         """Prints the string representation of an instance
         based on the class name and id.
 
@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(o_dic["{}.{}".format(argl[0], argl[1])])
 
-    def destroy(self, arg):
+    def do_destroy(self, arg):
         """Deletes an instance base on the case name and id"""
         o_dic = storage.all
         if len(arg) == 0:
@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
             del o_dic["{}.{}".format(arg[0], arg[1])]
             storage.save()
 
-    def all(self, arg):
+    def do_all(self, arg):
         """Prints all string representation of all instances
            based or not on the class name.
         """
@@ -101,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
                     obj.append(ob.__str__())
             print(obj)
 
-    def update(self, arg):
+    def do_update(self, arg):
         """Updates an instance based on the class name and id by
            adding or updating attribute
         """
