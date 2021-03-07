@@ -22,13 +22,13 @@
     text-align:center;
     margin-top:0;
 }
-.title_box {
+.box {
     display:flex;
     justify-content:space-between;
     margin-top:-2%;
 }
 
-.title_box h2 {
+.box h2 {
     text-align:center;
     margin:25px 0px 40px 30%;
 }
