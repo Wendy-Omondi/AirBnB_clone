@@ -1,6 +1,16 @@
 # **AirBnB_clone**
+This is a **console-based clone** of the AirBnB platform — in the ALX SE program.
 
-## **Project Description**
+## 💡 Project Scope
+Build a command-line interface (CLI) that:
+- Creates, shows, destroys, and updates instances of objects
+- Persists data using JSON
+- Mimics backend structure for future web-based expansion
+
+## 📁 Key Components
+- `console.py` – main entry point
+- `models/` – base and class models for Users, Places, etc.
+- `tests/` – unit tests
 
 ## **The Console**
 Contains the entry point of the command interpreter
@@ -45,8 +55,13 @@ Prints all string representation of all instances based or not on the class name
 ```Ex: $ all BaseModel or $ all.```                                                                                        
 ###### **update:**                                                                                                        
 Updates an instance based on the class name and `id` by adding or updating attribute (saves the change into the JSON file).
-```Ex: $ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com".```                                             
+```Ex: $ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com".```       
 
-## **Author**
+## 🔧 Tech Stack
+- Python 3.x
+- Object-Oriented Programming
+- JSON storage
 
-Wendy Omondi <w.omondi19@launchpad.com>
+## 👩‍💻 Author
+Wendy Omondi  
+[GitHub](https://github.com/Wendy-Omondi) | [LinkedIn](https://www.linkedin.com/in/wendy-omondi/)
